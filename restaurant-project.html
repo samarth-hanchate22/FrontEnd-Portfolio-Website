@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Landing Page Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-detail {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2C2E4A 40%, #3E3A9D 100%);
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .project-header {
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            animation: slideDown 1s ease-out;
+        }
+
+        .project-subtitle {
+            color: #A29BFE;
+            font-size: 1.2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-info {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .project-features {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInRight 1s ease-out;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 107, 107, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #FF6B6B;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: #FF6B6B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: #FF6B6B;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+        }
+
+        .demo-section {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .menu-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .design-section {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .design-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .design-feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .design-feature:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+    
+    <div class="project-detail">
+        <div class="project-header">
+            <h1 class="project-title">Restaurant Landing Page</h1>
+            <p class="project-subtitle">A modern and appetizing web experience</p>
+        </div>
+
+        <div class="project-content">
+            <div class="project-info">
+                <h2>Project Overview</h2>
+                <p>This Restaurant Landing Page project showcases a fictional restaurant's online presence with a focus on modern design, user experience, and visual appeal. Built using Bootstrap, it features a responsive layout that works seamlessly across all devices.</p>
+                
+                <h3>Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">HTML5</span>
+                    <span class="tech-item">CSS3</span>
+                    <span class="tech-item">Bootstrap 5</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">Responsive Design</span>
+                </div>
+
+                <div class="demo-section">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🍽️</span>
+                            <span>Menu showcase with categories</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📱</span>
+                            <span>Fully responsive design</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🎨</span>
+                            <span>Modern and clean UI</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📸</span>
+                            <span>High-quality food imagery</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📍</span>
+                            <span>Location and contact info</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">⏰</span>
+                            <span>Opening hours display</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Design Elements</h2>
+                <div class="menu-card">
+                    <h3>Visual Design</h3>
+                    <div class="design-features">
+                        <div class="design-feature">
+                            <span class="feature-icon">🎯</span>
+                            <p>Color Scheme</p>
+                        </div>
+                        <div class="design-feature">
+                            <span class="feature-icon">📐</span>
+                            <p>Layout</p>
+                        </div>
+                        <div class="design-feature">
+                            <span class="feature-icon">🖼️</span>
+                            <p>Typography</p>
+                        </div>
+                        <div class="design-feature">
+                            <span class="feature-icon">✨</span>
+                            <p>Animations</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <h3>User Experience</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🚀</span>
+                            <span>Smooth scrolling navigation</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📱</span>
+                            <span>Mobile-first approach</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🔍</span>
+                            <span>Easy menu browsing</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📞</span>
+                            <span>Quick contact access</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="design-section">
+                    <h3>Bootstrap Implementation</h3>
+                    <p>Key Bootstrap features utilized:</p>
+                    <ul class="feature-list">
+                        <li>Responsive grid system</li>
+                        <li>Navigation components</li>
+                        <li>Card layouts</li>
+                        <li>Custom styling overrides</li>
+                        <li>Utility classes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

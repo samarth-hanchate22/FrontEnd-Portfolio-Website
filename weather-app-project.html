@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-detail {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2C2E4A 40%, #3E3A9D 100%);
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .project-header {
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            animation: slideDown 1s ease-out;
+        }
+
+        .project-subtitle {
+            color: #A29BFE;
+            font-size: 1.2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-info {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .project-features {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInRight 1s ease-out;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 107, 107, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            color: #FF6B6B;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: #FF6B6B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: #FF6B6B;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+        }
+
+        .demo-section {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            margin-top: 2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .weather-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .api-section {
+            background: rgba(255, 107, 107, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .api-section code {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-family: monospace;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+    
+    <div class="project-detail">
+        <div class="project-header">
+            <h1 class="project-title">Weather Forecast App</h1>
+            <p class="project-subtitle">Real-time weather information at your fingertips</p>
+        </div>
+
+        <div class="project-content">
+            <div class="project-info">
+                <h2>Project Overview</h2>
+                <p>This Weather Forecast App provides real-time weather information using the OpenWeatherMap API. Users can search for weather conditions in any location, view detailed forecasts, and get current weather updates with a clean and intuitive interface.</p>
+                
+                <h3>Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">HTML5</span>
+                    <span class="tech-item">CSS3</span>
+                    <span class="tech-item">JavaScript (ES6+)</span>
+                    <span class="tech-item">OpenWeatherMap API</span>
+                    <span class="tech-item">Fetch API</span>
+                </div>
+
+                <div class="demo-section">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🌡️</span>
+                            <span>Real-time weather data</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🔍</span>
+                            <span>Location-based search</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📱</span>
+                            <span>Responsive design</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🌤️</span>
+                            <span>5-day forecast</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">⚡</span>
+                            <span>Error handling</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🎯</span>
+                            <span>Geolocation support</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Implementation Details</h2>
+                <div class="weather-card">
+                    <h3>API Integration</h3>
+                    <p>Integrated with OpenWeatherMap API to fetch:</p>
+                    <ul class="feature-list">
+                        <li>Current weather conditions</li>
+                        <li>Temperature in Celsius/Fahrenheit</li>
+                        <li>Humidity and wind speed</li>
+                        <li>Weather icons and descriptions</li>
+                    </ul>
+                </div>
+
+                <div class="weather-card">
+                    <h3>User Interface</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🎨</span>
+                            <span>Clean and modern design</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">📊</span>
+                            <span>Visual weather representation</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🔄</span>
+                            <span>Auto-refresh functionality</span>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🌍</span>
+                            <span>Multi-location support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="api-section">
+                    <h3>API Implementation</h3>
+                    <p>Example API call:</p>
+                    <code>fetch('https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}')</code>
+                    <p>Features implemented:</p>
+                    <ul class="feature-list">
+                        <li>Error handling for API failures</li>
+                        <li>Loading states and animations</li>
+                        <li>Data caching for performance</li>
+                        <li>Input validation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

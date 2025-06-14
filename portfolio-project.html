@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-detail {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2C2E4A 40%, #3E3A9D 100%);
+            padding: 2rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .project-header {
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            animation: slideDown 1s ease-out;
+        }
+
+        .project-subtitle {
+            color: #A29BFE;
+            font-size: 1.2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .project-info {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .project-features {
+            background: rgba(62, 58, 157, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: slideInRight 1s ease-out;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            transform: translateX(10px);
+            background: rgba(255, 107, 107, 0.2);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: #FF6B6B;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: #FF6B6B;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">← Back to Portfolio</a>
+    
+    <div class="project-detail">
+        <div class="project-header">
+            <h1 class="project-title">Personal Portfolio Website</h1>
+            <p class="project-subtitle">A showcase of my work and skills</p>
+        </div>
+
+        <div class="project-content">
+            <div class="project-info">
+                <h2>Project Overview</h2>
+                <p>This portfolio website serves as a comprehensive showcase of my professional journey, skills, and projects. Built with a focus on modern design principles and user experience, it demonstrates my capabilities in web development and design.</p>
+                
+                <h3>Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-item">HTML5</span>
+                    <span class="tech-item">CSS3</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">Responsive Design</span>
+                    <span class="tech-item">GitHub Pages</span>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Key Features</h2>
+                <ul class="feature-list">
+                    <li>Responsive design that works seamlessly across all devices</li>
+                    <li>Modern and clean user interface with smooth animations</li>
+                    <li>Interactive navigation with smooth scrolling</li>
+                    <li>Project showcase section with detailed descriptions</li>
+                    <li>Contact form with validation</li>
+                    <li>Skills section with visual representation</li>
+                    <li>Experience timeline with detailed information</li>
+                    <li>Social media integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
